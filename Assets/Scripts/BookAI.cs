@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BookAI : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class BookAI : MonoBehaviour
 	[SerializeField] private AudioClip[] _neutralClips;
 	[SerializeField] private AudioClip[] _onClickClips;
 	[SerializeField] private float _effectDuration = 2f;
+	private int _currentClickClipIndex = 0;
+	private Camera _mainCamera;
 
 	private void Start()
 	{
@@ -38,6 +42,8 @@ public class BookAI : MonoBehaviour
 		{
 			_audioSource = GetComponent<AudioSource>();
 		}
+
+		_mainCamera = Camera.main;
 	}
 
 	private void OnEnable()
@@ -49,6 +55,22 @@ public class BookAI : MonoBehaviour
 		_textInput.TextEntered -= OnTextEntered;
 	}
 
+	private void Update()
+	{
+		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) // Check for left or right mouse button click
+		{
+			RaycastHit hit;
+			Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+			if (Physics.Raycast(ray, out hit))
+			{
+				if (hit.collider != null && hit.collider.gameObject == gameObject) // Check if the clicked object is part of the book
+				{
+					OnBookClicked();
+				}
+			}
+		}
+	}
+
 	public void StartInteraction()
 	{
 		_textInput.TextEntered += OnTextEntered;
@@ -57,6 +79,26 @@ public class BookAI : MonoBehaviour
 	public void EndInteraction()
 	{
 		_textInput.TextEntered -= OnTextEntered;
+	}
+
+	public void OnBookClicked()
+	{
+		if (_audioSource != null && _onClickClips.Length > 0)
+		{
+			if (_currentClickClipIndex < _onClickClips.Length)
+			{
+				_audioSource.clip = _onClickClips[_currentClickClipIndex];
+				_audioSource.Play();
+				StartCoroutine(EffectCoroutine(null, _audioSource.clip.length));
+				_currentClickClipIndex++;
+			}
+			else
+			{
+				_audioSource.clip = _onClickClips[Random.Range(0, _onClickClips.Length)];
+				_audioSource.Play();
+				StartCoroutine(EffectCoroutine(null, _audioSource.clip.length));
+			}
+		}
 	}
 
 	private void OnTextEntered(string text)
@@ -74,7 +116,7 @@ public class BookAI : MonoBehaviour
 				// Do positive things
 				Debug.Log("Positive word detected!");
 				_faceController.SetExpression(_faceController.happy);
-				StartCoroutine(EffectCoroutine(_loveEffect));
+				StartCoroutine(EffectCoroutine(_loveEffect, _effectDuration));
 				_audioSource.clip = _positiveClips[Random.Range(0, _positiveClips.Length)];
 				_audioSource.Play();
 				break;
@@ -82,7 +124,7 @@ public class BookAI : MonoBehaviour
 				// Do super positive things
 				Debug.Log("Super positive word detected!");
 				_faceController.SetExpression(_faceController.happy);
-				StartCoroutine(EffectCoroutine(_loveEffect));
+				StartCoroutine(EffectCoroutine(_loveEffect, _effectDuration));
 				_audioSource.clip = _superPositiveClips[Random.Range(0, _superPositiveClips.Length)];
 				_audioSource.Play();
 				break;
@@ -90,7 +132,7 @@ public class BookAI : MonoBehaviour
 				// Do negative things
 				Debug.Log("Negative word detected!");
 				_faceController.SetExpression(_faceController.sad);
-				StartCoroutine(EffectCoroutine(_dislikeEffect));
+				StartCoroutine(EffectCoroutine(_dislikeEffect, _effectDuration));
 				_audioSource.clip = _negativeClips[Random.Range(0, _negativeClips.Length)];
 				_audioSource.Play();
 				break;
@@ -98,7 +140,7 @@ public class BookAI : MonoBehaviour
 				// Do super negative things
 				Debug.Log("Super negative word detected!");
 				_faceController.SetExpression(_faceController.angry);
-				StartCoroutine(EffectCoroutine(_dislikeEffect));
+				StartCoroutine(EffectCoroutine(_dislikeEffect, _effectDuration));
 				_audioSource.clip = _superNegativeClips[Random.Range(0, _superNegativeClips.Length)];
 				_audioSource.Play();
 				break;
@@ -106,19 +148,22 @@ public class BookAI : MonoBehaviour
 				// Word not recognized
 				Debug.Log("Word not recognized.");
 				_faceController.SetExpression(_faceController.neutral);
-				StartCoroutine(EffectCoroutine(null));
-				_audioSource.clip = _neutralClips[Random.Range(0, _neutralClips.Length)];
-				_audioSource.Play();
+				StartCoroutine(EffectCoroutine(null, _effectDuration));
+				if (_neutralClips.Length > 0)
+				{
+					_audioSource.clip = _neutralClips[Random.Range(0, _neutralClips.Length)];
+					_audioSource.Play();
+				}
 				break;
 		}
 	}
 
-	private IEnumerator EffectCoroutine(GameObject effect)
+	private IEnumerator EffectCoroutine(GameObject effect, float duration)
 	{
 		if (effect == null)
 		{
 			_faceController.isTalking = true;
-			yield return new WaitForSeconds(_effectDuration);
+			yield return new WaitForSeconds(duration);
 			_faceController.isTalking = false;
 			yield break;
 		}
@@ -128,7 +173,7 @@ public class BookAI : MonoBehaviour
 			child.gameObject.GetComponent<ParticleSystem>().Play();
 		}
 		_faceController.isTalking = true;
-		yield return new WaitForSeconds(_effectDuration);
+		yield return new WaitForSeconds(duration);
 		_faceController.isTalking = false;
 	}
 }
