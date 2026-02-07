@@ -1090,8 +1090,8 @@ RectTransform:
   - {fileID: 1498458143}
   - {fileID: 1008269229}
   - {fileID: 1647609377}
-  - {fileID: 1651479040}
   - {fileID: 1061955526}
+  - {fileID: 1651479040}
   - {fileID: 633541330}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1110,6 +1110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008269229}
   - component: {fileID: 1008269230}
+  - component: {fileID: 1008269231}
   m_Layer: 5
   m_Name: buttonup
   m_TagString: Untagged
@@ -1194,6 +1195,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &1008269231
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008269228}
+  m_CullTransparentMesh: 1
 --- !u!1 &1061955525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061955526}
   - component: {fileID: 1061955527}
+  - component: {fileID: 1061955528}
   m_Layer: 5
   m_Name: confirmbutton
   m_TagString: Untagged
@@ -1289,6 +1299,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &1061955528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061955525}
+  m_CullTransparentMesh: 1
 --- !u!1 &1144437334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6779,6 +6797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647609377}
   - component: {fileID: 1647609378}
+  - component: {fileID: 1647609379}
   m_Layer: 5
   m_Name: buttondown
   m_TagString: Untagged
@@ -6863,6 +6882,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &1647609379
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647609376}
+  m_CullTransparentMesh: 1
 --- !u!1 &1651479039
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,5 +27,6 @@ public class TextInput : MonoBehaviour
         {
             TextEntered.Invoke(_inputText);
         }
+        _inputField.text = "";
     }
 }
