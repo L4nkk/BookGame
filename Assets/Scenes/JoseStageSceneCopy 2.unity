@@ -5690,6 +5690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextMinigameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 558583573331055509, guid: 31856655cf475884480829ad1b0f1ce0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 660146926441899835, guid: 31856655cf475884480829ad1b0f1ce0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
