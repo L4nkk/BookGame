@@ -7302,6 +7302,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 6001123243891226522, guid: 001ae9ce5d874634fb98262c1864dbc0, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001123243891226522, guid: 001ae9ce5d874634fb98262c1864dbc0, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6752184790375859024, guid: 001ae9ce5d874634fb98262c1864dbc0, type: 3}
       propertyPath: m_Name
       value: RapBook
