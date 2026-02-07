@@ -109,10 +109,12 @@ public class BookAI : MonoBehaviour
 
     private IEnumerator EffectCoroutine(GameObject effect)
     {
-        effect.SetActive(true);
+        foreach (Transform child in effect.transform)
+        {
+            child.gameObject.GetComponent<ParticleSystem>().Play();
+        }
         _faceController.isTalking = true;
         yield return new WaitForSeconds(_effectDuration);
         _faceController.isTalking = false;
-        effect.SetActive(false);
     }
 }
