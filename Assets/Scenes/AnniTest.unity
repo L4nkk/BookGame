@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -211, y: -431}
+  m_AnchoredPosition: {x: 19.268, y: -431}
   m_SizeDelta: {x: 196.0518, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335077191
@@ -1185,6 +1185,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4953213815269289820, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
+      propertyPath: genre
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7173407319751861265, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
       propertyPath: m_Name
       value: Slot (1)
@@ -1341,6 +1345,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1710679980}
+  - {fileID: 333853137}
   - {fileID: 335077190}
   m_Father: {fileID: 1530252701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1454,17 +1459,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4953213815269289820, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
+      propertyPath: genre
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7173407319751861265, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
       propertyPath: m_Name
       value: Slot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3488931208809175985, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7173407319751861265, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1713915325}
+    - targetCorrespondingSourceObject: {fileID: 7173407319751861265, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1713915331}
   m_SourcePrefab: {fileID: 100100000, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
 --- !u!1 &1710679979
 GameObject:
@@ -1497,7 +1510,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1129498812}
-  - {fileID: 333853137}
   - {fileID: 1713915319}
   - {fileID: 1243172349}
   - {fileID: 49143935}
@@ -1530,7 +1542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.52479166, g: 0.8730816, b: 0.89433956, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1602,6 +1614,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1713915331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713915318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1777385795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,7 +1780,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1710679980}
+    m_TransformParent: {fileID: 1562145523}
     m_Modifications:
     - target: {fileID: 5122253649945343145, guid: 9147e1770699f2f47b189da9c30e1656, type: 3}
       propertyPath: m_text
@@ -1840,11 +1876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8939524326268823986, guid: 9147e1770699f2f47b189da9c30e1656, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 935.86145
+      value: 462
       objectReference: {fileID: 0}
     - target: {fileID: 8939524326268823986, guid: 9147e1770699f2f47b189da9c30e1656, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 270.3366
+      value: 242
       objectReference: {fileID: 0}
     - target: {fileID: 8939524326268823986, guid: 9147e1770699f2f47b189da9c30e1656, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1953,6 +1989,10 @@ PrefabInstance:
     - target: {fileID: 509971404859906735, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953213815269289820, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
+      propertyPath: genre
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7173407319751861265, guid: c9d9e699ddaf87140aea314fe1aa2051, type: 3}
       propertyPath: m_Name
