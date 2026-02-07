@@ -1,5 +1,8 @@
 using UnityEngine;
 
+[ExecuteAlways]
+
+
 public class FaceOffsetController : MonoBehaviour
 {
     [Header("Bones")]
@@ -65,6 +68,8 @@ public class FaceOffsetController : MonoBehaviour
 
     void Update()
     {
+        if (!Application.isPlaying) return;
+
         HandleInput();
         ApplyFace();
     }
@@ -96,22 +101,28 @@ public class FaceOffsetController : MonoBehaviour
         if (currentExpression == null) return;
 
         float jawOffset = 0f;
-        float lipOffset = 0f;
+        float lipWidthOffset = 0f;
 
         if (isTalking)
         {
             talkTimer += Time.deltaTime * talkSpeed;
+
             jawOffset = Mathf.Sin(talkTimer) * jawMoveAmount;
-            lipOffset = Mathf.Sin(talkTimer) * lipMoveAmount;
+            lipWidthOffset = Mathf.Sin(talkTimer) * lipMoveAmount;
         }
 
-        // ----- LIPS -----
+        // ----- LIPS POSITION (WIDTH EFFECT) -----
         lipL.localPosition =
-            lipLBasePos + currentExpression.lipLPos + new Vector3(lipOffset, 0, 0);
+            lipLBasePos +
+            currentExpression.lipLPos +
+            new Vector3(0, lipWidthOffset, 0); // LEFT moves left
 
         lipR.localPosition =
-            lipRBasePos + currentExpression.lipRPos + new Vector3(lipOffset, 0, 0);
+            lipRBasePos +
+            currentExpression.lipRPos +
+            new Vector3(0, -lipWidthOffset, 0); // RIGHT moves right
 
+        // ----- LIPS ROTATION -----
         lipL.localEulerAngles =
             lipLBaseRot + currentExpression.lipLRot;
 
@@ -129,6 +140,61 @@ public class FaceOffsetController : MonoBehaviour
         mouth.localEulerAngles =
             mouthBaseRot +
             currentExpression.mouthRot +
-            new Vector3(jawOffset, 0, 0);
+            new Vector3(0, jawOffset, 0);
     }
+
+#if UNITY_EDITOR
+
+[ContextMenu("Capture Neutral Base Pose")]
+void CaptureBasePose()
+{
+    lipLBasePos = lipL.localPosition;
+    lipRBasePos = lipR.localPosition;
+
+    lipLBaseRot = lipL.localEulerAngles;
+    lipRBaseRot = lipR.localEulerAngles;
+
+    browLBaseRot = browL.localEulerAngles;
+    browRBaseRot = browR.localEulerAngles;
+
+    mouthBaseRot = mouth.localEulerAngles;
+
+    UnityEditor.EditorUtility.SetDirty(this);
+}
+
+[ContextMenu("Capture Happy From Current Pose")]
+void CaptureHappy()
+{
+    CaptureExpression(happy);
+}
+
+[ContextMenu("Capture Angry From Current Pose")]
+void CaptureAngry()
+{
+    CaptureExpression(angry);
+}
+
+[ContextMenu("Capture Sad From Current Pose")]
+void CaptureSad()
+{
+    CaptureExpression(sad);
+}
+
+void CaptureExpression(ExpressionOffset target)
+{
+    target.lipLPos = lipL.localPosition - lipLBasePos;
+    target.lipRPos = lipR.localPosition - lipRBasePos;
+
+    target.lipLRot = lipL.localEulerAngles - lipLBaseRot;
+    target.lipRRot = lipR.localEulerAngles - lipRBaseRot;
+
+    target.browLRot = browL.localEulerAngles - browLBaseRot;
+    target.browRRot = browR.localEulerAngles - browRBaseRot;
+
+    target.mouthRot = mouth.localEulerAngles - mouthBaseRot;
+
+    UnityEditor.EditorUtility.SetDirty(this);
+}
+#endif
+
 }
