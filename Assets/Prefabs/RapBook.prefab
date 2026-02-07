@@ -24663,13 +24663,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordChecker
   _positiveWords:
-  - good
+  - Beat
+  - Kick
+  - Snare
+  - Fairy
+  - FL Studio
+  - Garageband
+  - Producer
+  - Session
+  - Vibe
+  - Fitness
+  - Muscle
+  - Mug
+  - Hook
+  - Book
+  - Nursery
+  - Dart
+  - Smart
+  - Fart
+  - Shart
+  - Fuck
+  - Shit
+  - Dayum
+  - Studio
+  - Mic
+  - Whiskey
+  - Scotch
+  - Crime
+  - Thug
+  - Jail
+  - Wild
+  - Librarian
   _negativeWords:
-  - bad
+  - Wine
+  - Wizard
+  - Tower
+  - Cringe
+  - Murder
+  - Murderer
+  - Pop
+  - Shove
+  - Abuse
+  - Dust
+  - Etiquette
+  - BookWorm
+  - BookWorms
   _superPositiveWords:
-  - supergood
+  - Macklemore
+  - Kendrick
+  - Snoop
+  - Flow
+  - Bars
+  - Heat
+  - Ice
+  - Trill
+  - Opp
+  - Drip
+  - Cap
+  - Flex
+  - Cash
+  - Money
+  - Drip
+  - Cap
+  - Flex
+  - Cash
+  - Money
+  - Rizz
+  - Song
+  - Rhythm
+  - Eminem
+  - Rhyme
+  - Drums
   _superNegativeWords:
-  - superbad
+  - Eminem is bad
 --- !u!82 &6001123243891226522
 AudioSource:
   m_ObjectHideFlags: 0
