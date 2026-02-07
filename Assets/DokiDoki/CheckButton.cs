@@ -16,7 +16,6 @@ public class CheckButton : MonoBehaviour
             if(slot.transform.GetChild(0).GetComponent<ItemGenre>().Genre != slot.GetComponent<SlotGenre>().Genre)
             {
                 Debug.Log("Wrong!");
-                return;
             }
             else
             {

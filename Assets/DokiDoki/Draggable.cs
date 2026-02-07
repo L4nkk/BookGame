@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Transform parentAfterDrag;
+    [HideInInspector]public Transform parentAfterDrag;
     public Image image;
 
     public void OnBeginDrag(PointerEventData eventData)
