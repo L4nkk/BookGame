@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WordChecker : MonoBehaviour
@@ -7,12 +8,14 @@ public class WordChecker : MonoBehaviour
     [SerializeField] private string[] _superPositiveWords;
     [SerializeField] private string[] _superNegativeWords;
 
+    public event Action<WordValue> WordChecked;
+
     public void CheckWord(string wordToCheck)
     {
         WordValue wordValue = WordValue.None;
         foreach (string word in _positiveWords)
         {
-            if (word.Equals(wordToCheck))
+            if (word.Trim().ToLower().Equals(wordToCheck))
             {
                 wordValue = WordValue.Positive;
                 break;
@@ -23,7 +26,7 @@ public class WordChecker : MonoBehaviour
         {
             foreach (string word in _superPositiveWords)
             {
-                if (word.Equals(wordToCheck))
+                if (word.Trim().ToLower().Equals(wordToCheck))
                 {
                     wordValue = WordValue.SuperPositive;
                     break;
@@ -35,7 +38,7 @@ public class WordChecker : MonoBehaviour
         {
             foreach (string word in _negativeWords)
             {
-                if (word.Equals(wordToCheck))
+                if (word.Trim().ToLower().Equals(wordToCheck))
                 {
                     wordValue = WordValue.Negative;
                     break;
@@ -47,7 +50,7 @@ public class WordChecker : MonoBehaviour
         {
             foreach (string word in _superNegativeWords)
             {
-                if (word.Equals(wordToCheck))
+                if (word.Trim().ToLower().Equals(wordToCheck))
                 {
                     wordValue = WordValue.SuperNegative;
                     break;
@@ -55,23 +58,9 @@ public class WordChecker : MonoBehaviour
             }
         }
 
-        switch (wordValue)
+        if (WordChecked != null)
         {
-            case WordValue.Positive:
-                // Do positive things
-                break;
-            case WordValue.SuperPositive:
-                // Do super positive things
-                break;
-            case WordValue.Negative:
-                // Do negative things
-                break;
-            case WordValue.SuperNegative:
-                // Do super negative things
-                break;
-            default:
-                Debug.Log("No value assigned to the word: " + wordToCheck);
-                break;
+            WordChecked.Invoke(wordValue);
         }
     }
 }
