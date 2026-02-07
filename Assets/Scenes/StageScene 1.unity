@@ -273,7 +273,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8411e41ded4eefa49923c20f4623ce0b, type: 2}
+  sharedProfile: {fileID: 11400000, guid: e010b57087c15234887e9d79bc3e1c82, type: 2}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dbdfa812dc9aab54d85a491c7636a427, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 993ef72a20d99c247bc5df97220c2aa4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -964,7 +964,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.7170844, b: 0, a: 0.83137256}
+      maxColor: {r: 0.7728925, g: 0, b: 1, a: 0.83137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
