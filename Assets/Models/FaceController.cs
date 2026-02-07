@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteAlways]
-public class FaceOffsetController : MonoBehaviour
+public class FaceController : MonoBehaviour
 {
     [Header("Bones")]
     public Transform lipL;
@@ -48,8 +48,8 @@ public class FaceOffsetController : MonoBehaviour
     public float lipMoveAmount = 5f;
     public float talkSpeed = 8f;
 
-    float talkTimer;
-    bool isTalking;
+    public float talkTimer;
+    public bool isTalking;
 
     void Start()
     {
@@ -91,10 +91,10 @@ public class FaceOffsetController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
             SetExpression(sad);
 
-        isTalking = Input.GetKey(KeyCode.Space);
+        //isTalking = Input.GetKey(KeyCode.Space);
     }
 
-    void SetExpression(ExpressionOffset expr)
+    public void SetExpression(ExpressionOffset expr)
     {
         targetExpression = expr;
     }
@@ -127,7 +127,7 @@ public class FaceOffsetController : MonoBehaviour
             Vector3.Lerp(blendedExpression.mouthRot, targetExpression.mouthRot, t);
     }
 
-    void ApplyFace()
+    public void ApplyFace()
     {
         if (targetExpression == null) return;
 
