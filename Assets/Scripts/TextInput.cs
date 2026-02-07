@@ -10,6 +10,14 @@ public class TextInput : MonoBehaviour
 
     public event Action<string> TextEntered;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            EnterButtonPressed();
+        }
+    }
+
     public void EnterButtonPressed()
     {
         _inputText = _inputField.text.Trim().ToLower();
