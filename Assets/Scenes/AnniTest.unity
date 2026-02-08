@@ -485,18 +485,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1530252702}
-        m_TargetAssemblyTypeName: MinigameButton, Assembly-CSharp
-        m_MethodName: CloseMinigamePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1562145524}
         m_TargetAssemblyTypeName: CheckButton, Assembly-CSharp
         m_MethodName: Check
@@ -742,13 +730,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1530252702}
-        m_TargetAssemblyTypeName: MinigameButton, Assembly-CSharp
-        m_MethodName: OpenPanel3
-        m_Mode: 1
+        m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1013,9 +1001,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1530252702}
-        m_TargetAssemblyTypeName: MinigameButton, Assembly-CSharp
-        m_MethodName: OpenPanel1
-        m_Mode: 1
+        m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1515,8 +1503,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1530252702}
-        m_TargetAssemblyTypeName: MinigameButton, Assembly-CSharp
-        m_MethodName: OpenMinigamePanel
+        m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
+        m_MethodName: OpenSelectPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1977,6 +1965,7 @@ MonoBehaviour:
   - {fileID: 1461815498}
   - {fileID: 725116446}
   - {fileID: 371407469}
+  minigameManager: {fileID: 0}
 --- !u!114 &972786867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,13 +2538,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1530252702}
-        m_TargetAssemblyTypeName: MinigameButton, Assembly-CSharp
-        m_MethodName: OpenPanel2
-        m_Mode: 1
+        m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2977,13 +2966,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530252697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e60708bef78868439841320c10bc2fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f687f3e71a98bb4f9b4c55e404935ba, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MinigameButton
-  minigamePanel: {fileID: 1974446989}
-  panel1: {fileID: 1562145522}
-  panel2: {fileID: 972786864}
-  panel3: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameManager
+  panels:
+  - {fileID: 1562145522}
+  - {fileID: 972786864}
+  buttons:
+  - {fileID: 712768598}
+  - {fileID: 1335146038}
+  selectPanel: {fileID: 1974446989}
 --- !u!1 &1562145522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,6 +3032,7 @@ MonoBehaviour:
   - {fileID: 1037183997}
   - {fileID: 1473580316}
   - {fileID: 866756568}
+  minigameManager: {fileID: 1530252702}
 --- !u!114 &1562145525
 MonoBehaviour:
   m_ObjectHideFlags: 0
