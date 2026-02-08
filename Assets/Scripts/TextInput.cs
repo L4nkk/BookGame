@@ -12,6 +12,7 @@ public class TextInput : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _foundWordsText;
 	[SerializeField] private Color _positiveColor = Color.green;
 	[SerializeField] private Color _negativeColor = Color.red;
+	[SerializeField] private AudioClip[] _inputClips;
 
 	public event Action<string> TextEntered;
 
@@ -39,7 +40,11 @@ public class TextInput : MonoBehaviour
 	{
 		if (_audioSource != null)
 		{
-			_audioSource.Play();
+			if (_inputClips.Length > 0)
+			{
+				int randomIndex = UnityEngine.Random.Range(0, _inputClips.Length);
+				_audioSource.PlayOneShot(_inputClips[randomIndex]);
+			}
 		}
 	}
 
@@ -52,16 +57,16 @@ public class TextInput : MonoBehaviour
 			switch (wordValue)
 			{
 				case WordValue.Positive:
-					_foundWordsText.text += $"<mark={"#" + _positiveColor.ToHexString()}>{cleanedWord}</mark> ";
+					_foundWordsText.text += $"<color={"#" + _positiveColor.ToHexString()}>{cleanedWord}</color> ";
 					break;
 				case WordValue.SuperPositive:
-					_foundWordsText.text += $"<mark={"#" + _positiveColor.ToHexString()}><b>{cleanedWord}</b></mark> ";
+					_foundWordsText.text += $"<color={"#" + _positiveColor.ToHexString()}><b>{cleanedWord}</b></color> ";
 					break;
 				case WordValue.Negative:
-					_foundWordsText.text += $"<mark={"#" + _negativeColor.ToHexString()}>{cleanedWord}</mark> ";
+					_foundWordsText.text += $"<color={"#" + _negativeColor.ToHexString()}>{cleanedWord}</color> ";
 					break;
 				case WordValue.SuperNegative:
-					_foundWordsText.text += $"<mark={"#" + _negativeColor.ToHexString()}><b>{cleanedWord}</b></mark> ";
+					_foundWordsText.text += $"<color={"#" + _negativeColor.ToHexString()}><b>{cleanedWord}</b></color> ";
 					break;
 			}
 		}

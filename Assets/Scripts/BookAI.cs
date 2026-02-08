@@ -17,6 +17,8 @@ public class BookAI : MonoBehaviour
 	[SerializeField] private AudioClip[] _superNegativeClips;
 	[SerializeField] private AudioClip[] _neutralClips;
 	[SerializeField] private AudioClip[] _onClickClips;
+	[SerializeField] private AudioClip _loveEffectClip;
+	[SerializeField] private AudioClip _dislikeEffectClip;
 	[SerializeField] private float _effectDuration = 2f;
 	private int _currentClickClipIndex = 0;
 	private Camera _mainCamera;
@@ -125,6 +127,7 @@ public class BookAI : MonoBehaviour
 				StartCoroutine(EffectCoroutine(_loveEffect, _effectDuration));
 				_audioSource.clip = _positiveClips[Random.Range(0, _positiveClips.Length)];
 				_audioSource.Play();
+				_audioSource.PlayOneShot(_loveEffectClip);
 				break;
 			case WordValue.SuperPositive:
 				// Do super positive things
@@ -133,6 +136,7 @@ public class BookAI : MonoBehaviour
 				StartCoroutine(EffectCoroutine(_loveEffect, _effectDuration));
 				_audioSource.clip = _superPositiveClips[Random.Range(0, _superPositiveClips.Length)];
 				_audioSource.Play();
+				_audioSource.PlayOneShot(_loveEffectClip);
 				break;
 			case WordValue.Negative:
 				// Do negative things
@@ -141,6 +145,7 @@ public class BookAI : MonoBehaviour
 				StartCoroutine(EffectCoroutine(_dislikeEffect, _effectDuration));
 				_audioSource.clip = _negativeClips[Random.Range(0, _negativeClips.Length)];
 				_audioSource.Play();
+				 _audioSource.PlayOneShot(_dislikeEffectClip);
 				break;
 			case WordValue.SuperNegative:
 				// Do super negative things
@@ -149,6 +154,7 @@ public class BookAI : MonoBehaviour
 				StartCoroutine(EffectCoroutine(_dislikeEffect, _effectDuration));
 				_audioSource.clip = _superNegativeClips[Random.Range(0, _superNegativeClips.Length)];
 				_audioSource.Play();
+				_audioSource.PlayOneShot(_dislikeEffectClip);
 				break;
 			default:
 				// Word not recognized
