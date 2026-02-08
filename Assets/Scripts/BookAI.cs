@@ -48,6 +48,10 @@ public class BookAI : MonoBehaviour
 
 	private void OnEnable()
 	{
+		if (_textInput != null)
+		{
+			StartInteraction();
+		}
 	}
 
 	private void OnDisable()
@@ -98,6 +102,8 @@ public class BookAI : MonoBehaviour
 				_audioSource.Play();
 				StartCoroutine(EffectCoroutine(null, _audioSource.clip.length));
 			}
+
+			_faceController.SetExpression(_faceController.neutral);
 		}
 	}
 
@@ -108,7 +114,7 @@ public class BookAI : MonoBehaviour
 		ReactToPlayerInput(wordValue);
 	}
 
-	private void ReactToPlayerInput(WordValue wordValue)
+	public void ReactToPlayerInput(WordValue wordValue)
 	{
 		switch (wordValue)
 		{
