@@ -8,6 +8,7 @@ public class CheckButton : MonoBehaviour
     public FaceController faceController;
     private int correctCount = 0;
     private int incorrectCount = 0;
+    public BookAI bookAI;
 
     public void Check()
     {
@@ -32,23 +33,23 @@ public class CheckButton : MonoBehaviour
 
         if (correctCount == slots.Length)
         {
-            bookStats.AddLovePoints(20);
-            faceController.SetExpression(faceController.happy);
+            bookStats.AddLovePoints(15);
+            bookAI.ReactToPlayerInput(WordValue.SuperPositive);
         }
         else if (correctCount == 2 || correctCount == 3)
         {
             bookStats.AddLovePoints(10);
-            faceController.SetExpression(faceController.neutral);
+            faceController.SetExpression(faceController.happy);
         }
         else if (correctCount == 1)
         {
             bookStats.AddLovePoints(5);
-            faceController.SetExpression(faceController.sad);
+            bookAI.ReactToPlayerInput(WordValue.Negative);
         }
         else if (correctCount == 0)
         {
             bookStats.DecrementLovePoints(10);
-            faceController.SetExpression(faceController.angry);
+            bookAI.ReactToPlayerInput(WordValue.SuperNegative);
         }
 
         minigameManager.CompleteCurrentPanel();
