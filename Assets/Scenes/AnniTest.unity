@@ -1965,7 +1965,7 @@ MonoBehaviour:
   - {fileID: 1461815498}
   - {fileID: 725116446}
   - {fileID: 371407469}
-  minigameManager: {fileID: 0}
+  minigameManager: {fileID: 1530252702}
 --- !u!114 &972786867
 MonoBehaviour:
   m_ObjectHideFlags: 0

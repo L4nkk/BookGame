@@ -12,6 +12,8 @@ public class MinigameManager : MonoBehaviour
 
     private void Start()
     {
+        completed = new bool[panels.Length];
+
         highestUnlockedPanel = PlayerPrefs.GetInt("HighestUnlockedPanel", 0);
         
         for (int i = 0; i < panels.Length; i++)
@@ -48,6 +50,8 @@ public class MinigameManager : MonoBehaviour
     {
         panels[currentPanelIndex].SetActive(false);
 
+        completed[currentPanelIndex] = true;
+
         if (currentPanelIndex + 1 < panels.Length)
         {
             highestUnlockedPanel = currentPanelIndex + 1;
@@ -71,7 +75,7 @@ public class MinigameManager : MonoBehaviour
     {
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i].interactable = completed[i];
+            buttons[i].interactable = !completed[i];
         }
     }
 }
