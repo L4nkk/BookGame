@@ -33,7 +33,7 @@ public class CheckButton : MonoBehaviour
 
         if (correctCount == slots.Length)
         {
-            bookStats.AddLovePoints(15);
+            bookStats.AddLovePoints(20);
             bookAI.ReactToPlayerInput(WordValue.SuperPositive);
         }
         else if (correctCount == 2 || correctCount == 3)
@@ -44,12 +44,12 @@ public class CheckButton : MonoBehaviour
         else if (correctCount == 1)
         {
             bookStats.AddLovePoints(5);
-            bookAI.ReactToPlayerInput(WordValue.Negative);
+            faceController.SetExpression(faceController.sad);
         }
         else if (correctCount == 0)
         {
             bookStats.DecrementLovePoints(10);
-            bookAI.ReactToPlayerInput(WordValue.SuperNegative);
+            faceController.SetExpression(faceController.angry);
         }
 
         minigameManager.CompleteCurrentPanel();

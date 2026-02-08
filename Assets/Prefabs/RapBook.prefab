@@ -24519,6 +24519,7 @@ GameObject:
   - component: {fileID: 4869156154851751927}
   - component: {fileID: 1901986746979124651}
   - component: {fileID: 6001123243891226522}
+  - component: {fileID: 474261799279509331}
   m_Layer: 0
   m_Name: RapBook
   m_TagString: Untagged
@@ -24649,6 +24650,8 @@ MonoBehaviour:
   _superNegativeClips:
   - {fileID: 8300000, guid: 98a5aac4c128d0243b9f25e3b9f837e9, type: 3}
   - {fileID: 8300000, guid: f13a69c8dd4a4cd44b27d468f000234e, type: 3}
+  _neutralClips: []
+  _onClickClips: []
   _effectDuration: 1.5
 --- !u!114 &1901986746979124651
 MonoBehaviour:
@@ -24833,6 +24836,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &474261799279509331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752184790375859024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36314b0371912ba49af02197907cfa6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BookStats
+  lovePoints: 20
 --- !u!1 &7496646108653865680
 GameObject:
   m_ObjectHideFlags: 0
