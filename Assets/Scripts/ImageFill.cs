@@ -3,11 +3,14 @@ using UnityEngine.UI;
 
 public class ImageFill : MonoBehaviour
 {
-    private Image _imageToFill;
+    [SerializeField] private Image _imageToFill;
 
     private void Awake()
     {
-        _imageToFill = GetComponent<Image>();
+        if (_imageToFill == null)
+        {
+            _imageToFill = GetComponent<Image>();
+        }
     }
 
     public void IncrementFillAmount(float amount)
