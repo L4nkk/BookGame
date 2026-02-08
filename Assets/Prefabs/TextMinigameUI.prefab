@@ -123,6 +123,11 @@ MonoBehaviour:
   _foundWordsText: {fileID: 3016252800492314386}
   _positiveColor: {r: 0.8490566, g: 0, b: 0.5125307, a: 1}
   _negativeColor: {r: 0.46872932, g: 0, b: 0.7735849, a: 1}
+  _inputClips:
+  - {fileID: 8300000, guid: b9427ea739137094f8b937dd81464add, type: 3}
+  - {fileID: 8300000, guid: 701a740d3bfd70a478e608b5f5054c26, type: 3}
+  - {fileID: 8300000, guid: 1da1d0a805c67a54c8a351ea1b523d40, type: 3}
+  - {fileID: 8300000, guid: 8baf4da84c933da4d94acef106f1c868, type: 3}
 --- !u!82 &3545631405763818019
 AudioSource:
   m_ObjectHideFlags: 0
@@ -484,7 +489,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5594313010905658196}
+        m_TargetAssemblyTypeName: TextInput, Assembly-CSharp
+        m_MethodName: PlayInputSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -24519,6 +24519,7 @@ GameObject:
   - component: {fileID: 4869156154851751927}
   - component: {fileID: 1901986746979124651}
   - component: {fileID: 6001123243891226522}
+  - component: {fileID: 2257401902126999394}
   m_Layer: 0
   m_Name: RapBook
   m_TagString: Untagged
@@ -24634,7 +24635,7 @@ MonoBehaviour:
   _faceController: {fileID: 7991557238151644408}
   _loveEffect: {fileID: 3898413228543751448}
   _dislikeEffect: {fileID: 7650613625526699522}
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 6001123243891226522}
   _positiveClips:
   - {fileID: 8300000, guid: bc2a338cf280e9b4e9e62f9e0cf09757, type: 3}
   - {fileID: 8300000, guid: 289da5e9b2d364d47b7150b2eacce1fd, type: 3}
@@ -24649,6 +24650,24 @@ MonoBehaviour:
   _superNegativeClips:
   - {fileID: 8300000, guid: 98a5aac4c128d0243b9f25e3b9f837e9, type: 3}
   - {fileID: 8300000, guid: f13a69c8dd4a4cd44b27d468f000234e, type: 3}
+  _neutralClips: []
+  _onClickClips:
+  - {fileID: 8300000, guid: 551a87a8cfd9c2a4797c27444a1ffec9, type: 3}
+  - {fileID: 8300000, guid: 1cc746bd2bbe527449c9e174ce4af9a0, type: 3}
+  - {fileID: 8300000, guid: 3f07f92b02a84e6478520bf71ace7a53, type: 3}
+  - {fileID: 8300000, guid: 6701f4e42bae2854faa970191f1232e0, type: 3}
+  - {fileID: 8300000, guid: 6ede9ccad51fbb74a9c062a06ef304ac, type: 3}
+  - {fileID: 8300000, guid: 17810f1ad6dc28741bda5fc0178f27dc, type: 3}
+  - {fileID: 8300000, guid: 3b216d7d875cd52448ac588c428f43da, type: 3}
+  - {fileID: 8300000, guid: 0871178ad28113b44aae030f8a330fdf, type: 3}
+  - {fileID: 8300000, guid: 51f135c4beab55142bd9ba103428e75d, type: 3}
+  - {fileID: 8300000, guid: 4f44c72fa6f03a24abfd1b6f0e700486, type: 3}
+  - {fileID: 8300000, guid: 51de8b68ed1c01142908e3809ee42965, type: 3}
+  - {fileID: 8300000, guid: 5ce7f06ef28838c42a243f5e37c8338f, type: 3}
+  - {fileID: 8300000, guid: c574e49fe2f181a4e82a06738b51e547, type: 3}
+  - {fileID: 8300000, guid: 78c00ce3cd68f3a4585e26d8057a9e1b, type: 3}
+  - {fileID: 8300000, guid: baac4411405d55a408871116e48cf741, type: 3}
+  - {fileID: 8300000, guid: 5aa0354aafe5a224baf42c96caba5697, type: 3}
   _effectDuration: 1.5
 --- !u!114 &1901986746979124651
 MonoBehaviour:
@@ -24756,7 +24775,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -24793,7 +24812,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -24833,6 +24852,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2257401902126999394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752184790375859024}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.606159, y: 3.3090677, z: 1}
+  m_Center: {x: 0.08558118, y: 2.0422482, z: 0}
 --- !u!1 &7496646108653865680
 GameObject:
   m_ObjectHideFlags: 0
@@ -29948,7 +29988,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30

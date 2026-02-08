@@ -12,6 +12,7 @@ public class TextInput : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _foundWordsText;
 	[SerializeField] private Color _positiveColor = Color.green;
 	[SerializeField] private Color _negativeColor = Color.red;
+	[SerializeField] private AudioClip[] _inputClips;
 
 	public event Action<string> TextEntered;
 
@@ -39,7 +40,11 @@ public class TextInput : MonoBehaviour
 	{
 		if (_audioSource != null)
 		{
-			_audioSource.Play();
+			if (_inputClips.Length > 0)
+			{
+				int randomIndex = UnityEngine.Random.Range(0, _inputClips.Length);
+				_audioSource.PlayOneShot(_inputClips[randomIndex]);
+			}
 		}
 	}
 
