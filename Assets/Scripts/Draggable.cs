@@ -10,7 +10,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(transform.root, true);
         transform.SetAsLastSibling();
 
         image.raycastTarget = false;
