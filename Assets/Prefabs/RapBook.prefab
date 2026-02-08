@@ -24642,7 +24642,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 26cbb8538f33c3745ac2cf1fe4bb2729, type: 3}
   _negativeClips:
   - {fileID: 8300000, guid: 2c6c86ed18d4c874d885fc053a8fb65e, type: 3}
-  - {fileID: 8300000, guid: 66bf71cd01c5ca1458d4b952684a1ee0, type: 3}
   - {fileID: 8300000, guid: 7df4d3bf292bf8444955b0ca7f62eaa9, type: 3}
   _superPositiveClips:
   - {fileID: 8300000, guid: b233973a708cc9a4fb1080a2cc522c09, type: 3}
@@ -24650,7 +24649,8 @@ MonoBehaviour:
   _superNegativeClips:
   - {fileID: 8300000, guid: 98a5aac4c128d0243b9f25e3b9f837e9, type: 3}
   - {fileID: 8300000, guid: f13a69c8dd4a4cd44b27d468f000234e, type: 3}
-  _neutralClips: []
+  _neutralClips:
+  - {fileID: 8300000, guid: 66bf71cd01c5ca1458d4b952684a1ee0, type: 3}
   _onClickClips:
   - {fileID: 8300000, guid: 551a87a8cfd9c2a4797c27444a1ffec9, type: 3}
   - {fileID: 8300000, guid: 1cc746bd2bbe527449c9e174ce4af9a0, type: 3}
@@ -24668,6 +24668,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78c00ce3cd68f3a4585e26d8057a9e1b, type: 3}
   - {fileID: 8300000, guid: baac4411405d55a408871116e48cf741, type: 3}
   - {fileID: 8300000, guid: 5aa0354aafe5a224baf42c96caba5697, type: 3}
+  _loveEffectClip: {fileID: 8300000, guid: 96764a9c25e369043a5bdaf3c8880aec, type: 3}
+  _dislikeEffectClip: {fileID: 8300000, guid: 34ffd9fedac01794eaad5775e08a4aa0, type: 3}
   _effectDuration: 1.5
 --- !u!114 &1901986746979124651
 MonoBehaviour:
