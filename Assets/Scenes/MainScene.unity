@@ -216,7 +216,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5069061087286372164, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
@@ -225,6 +226,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5576654004884239543, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
   m_PrefabInstance: {fileID: 300988092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &300988094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7707585760398393805, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+  m_PrefabInstance: {fileID: 300988092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300988093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f687f3e71a98bb4f9b4c55e404935ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameManager
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::opengames
   WriteGame: {fileID: 350402783}
   DragGame: {fileID: 300988093}
+  minigameManager: {fileID: 300988094}
 --- !u!114 &573573691
 MonoBehaviour:
   m_ObjectHideFlags: 0
