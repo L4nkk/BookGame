@@ -13,9 +13,9 @@ public class ImageFill : MonoBehaviour
         }
     }
 
-    public void IncrementFillAmount(float amount)
+    public void UpdateFill(float amount)
     {
         float fillAmountDivided = amount / 100f;
-        _imageToFill.fillAmount = Mathf.Clamp01(_imageToFill.fillAmount + fillAmountDivided);
+        _imageToFill.fillAmount = Mathf.Clamp01(fillAmountDivided);
     }
 }

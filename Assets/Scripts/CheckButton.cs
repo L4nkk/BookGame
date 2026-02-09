@@ -48,7 +48,7 @@ public class CheckButton : MonoBehaviour
         }
         else if (correctCount == 0)
         {
-            bookStats.DecrementLovePoints(10);
+            bookStats.AddHatePoints(10);
             bookAI.ReactToPlayerInput(WordValue.SuperNegative);
 
         }

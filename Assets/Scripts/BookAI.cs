@@ -19,10 +19,18 @@ public class BookAI : MonoBehaviour
 	[SerializeField] private AudioClip[] _onClickClips;
 	[SerializeField] private AudioClip _loveEffectClip;
 	[SerializeField] private AudioClip _dislikeEffectClip;
+	[SerializeField] private AudioClip _winClip;
+	[SerializeField] private AudioClip _loseClip;
 	[SerializeField] private float _effectDuration = 2f;
+	private BookStats _bookStats;
 	private int _currentClickClipIndex = 0;
 	private Camera _mainCamera;
 
+	private void Awake()
+	{
+		_bookStats = GetComponent<BookStats>();
+		StartCoroutine(EffectCoroutine(null, _audioSource.clip.length - 0.5f));
+	}
 	private void Start()
 	{
 		if (_wordChecker == null)
@@ -128,6 +136,7 @@ public class BookAI : MonoBehaviour
 				_audioSource.clip = _positiveClips[Random.Range(0, _positiveClips.Length)];
 				_audioSource.Play();
 				_audioSource.PlayOneShot(_loveEffectClip);
+				_bookStats.AddLovePoints(10);
 				break;
 			case WordValue.SuperPositive:
 				// Do super positive things
@@ -137,6 +146,7 @@ public class BookAI : MonoBehaviour
 				_audioSource.clip = _superPositiveClips[Random.Range(0, _superPositiveClips.Length)];
 				_audioSource.Play();
 				_audioSource.PlayOneShot(_loveEffectClip);
+				_bookStats.AddLovePoints(20);
 				break;
 			case WordValue.Negative:
 				// Do negative things
@@ -145,7 +155,8 @@ public class BookAI : MonoBehaviour
 				StartCoroutine(EffectCoroutine(_dislikeEffect, _effectDuration));
 				_audioSource.clip = _negativeClips[Random.Range(0, _negativeClips.Length)];
 				_audioSource.Play();
-				 _audioSource.PlayOneShot(_dislikeEffectClip);
+				_audioSource.PlayOneShot(_dislikeEffectClip);
+				_bookStats.AddHatePoints(10);
 				break;
 			case WordValue.SuperNegative:
 				// Do super negative things
@@ -155,6 +166,7 @@ public class BookAI : MonoBehaviour
 				_audioSource.clip = _superNegativeClips[Random.Range(0, _superNegativeClips.Length)];
 				_audioSource.Play();
 				_audioSource.PlayOneShot(_dislikeEffectClip);
+				_bookStats.AddHatePoints(20);
 				break;
 			default:
 				// Word not recognized
@@ -187,5 +199,26 @@ public class BookAI : MonoBehaviour
 		_faceController.isTalking = true;
 		yield return new WaitForSeconds(duration);
 		_faceController.isTalking = false;
+	}
+
+	public void WinVoiceLine()
+	{
+		if (_winClip != null)
+		{
+			StopAllCoroutines();
+			_audioSource.clip = _winClip;
+			_audioSource.Play();
+			StartCoroutine(EffectCoroutine(null, _audioSource.clip.length));
+		}
+	}
+	public void LoseVoiceLine()
+	{
+		if (_loseClip != null)
+		{
+			StopAllCoroutines();
+			_audioSource.clip = _loseClip;
+			_audioSource.Play();
+			StartCoroutine(EffectCoroutine(null, _audioSource.clip.length));
+		}
 	}
 }
