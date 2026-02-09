@@ -4,6 +4,7 @@ public class opengames : MonoBehaviour
 {
     public GameObject WriteGame;
     public GameObject DragGame;
+    public MinigameManager minigameManager;
 
     public void OpenWriteGame()
     {
@@ -15,6 +16,7 @@ public class opengames : MonoBehaviour
     {
         DragGame.SetActive(true);
         WriteGame.SetActive(false);
+        minigameManager.OpenSelectPanel();
     }
 
     public void CloseWriteGame()
