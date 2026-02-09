@@ -4131,6 +4131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::opengames
   WriteGame: {fileID: 774615981}
   DragGame: {fileID: 397795555}
+  minigameManager: {fileID: 397795557}
 --- !u!114 &573573691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20118,7 +20119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1863605970
 RectTransform:
   m_ObjectHideFlags: 0
