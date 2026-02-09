@@ -39,17 +39,18 @@ public class CheckButton : MonoBehaviour
         else if (correctCount == 2 || correctCount == 3)
         {
             bookStats.AddLovePoints(10);
-            faceController.SetExpression(faceController.happy);
+            bookAI.ReactToPlayerInput(WordValue.Positive);
         }
         else if (correctCount == 1)
         {
             bookStats.AddLovePoints(5);
-            faceController.SetExpression(faceController.sad);
+            bookAI.ReactToPlayerInput(WordValue.Negative);
         }
         else if (correctCount == 0)
         {
             bookStats.DecrementLovePoints(10);
-            faceController.SetExpression(faceController.angry);
+            bookAI.ReactToPlayerInput(WordValue.SuperNegative);
+
         }
 
         minigameManager.CompleteCurrentPanel();
