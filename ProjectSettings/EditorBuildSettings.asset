@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ee57c4d034b32ec468a85c7746e4b3d6
+  - enabled: 1
     path: Assets/Scenes/JoseStageSceneCopy 2.unity
     guid: 2c7b1360dc7034146b0ac7c6a38b0d8a
   m_configObjects:
