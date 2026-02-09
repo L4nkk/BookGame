@@ -33,22 +33,22 @@ public class CheckButton : MonoBehaviour
 
         if (correctCount == slots.Length)
         {
-            bookStats.AddLovePoints(20);
+
             bookAI.ReactToPlayerInput(WordValue.SuperPositive);
         }
         else if (correctCount == 2 || correctCount == 3)
         {
-            bookStats.AddLovePoints(10);
+
             bookAI.ReactToPlayerInput(WordValue.Positive);
         }
         else if (correctCount == 1)
         {
-            bookStats.AddLovePoints(5);
+
             bookAI.ReactToPlayerInput(WordValue.Negative);
         }
         else if (correctCount == 0)
         {
-            bookStats.AddHatePoints(10);
+
             bookAI.ReactToPlayerInput(WordValue.SuperNegative);
 
         }

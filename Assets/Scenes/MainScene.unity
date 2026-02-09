@@ -127,6 +127,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 569692302677746189, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 651094600882776189, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 2017664747256926302, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: bookAI
+      value: 
+      objectReference: {fileID: 6021323273714558771}
+    - target: {fileID: 2017664747256926302, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: bookStats
+      value: 
+      objectReference: {fileID: 1796583640}
+    - target: {fileID: 2017664747256926302, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 3080986377860262496, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 5162350602186623616, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 5164223327502737221, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 5331185937052508357, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
     - target: {fileID: 5576654004884239543, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
       propertyPath: m_Name
       value: DragDrop
@@ -135,6 +171,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5596071526855594290, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 6180037446842143133, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 7021395172984181223, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 7370542895284022563, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 7562060016188052850, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: bookAI
+      value: 
+      objectReference: {fileID: 6021323273714558771}
+    - target: {fileID: 7562060016188052850, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: bookStats
+      value: 
+      objectReference: {fileID: 1796583640}
+    - target: {fileID: 7562060016188052850, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
     - target: {fileID: 8162730252583243125, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -215,6 +279,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8192197071928291220, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 8757642448550443913, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757642448550443913, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757642448550443913, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966633113443959339, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
+    - target: {fileID: 9136593670788380617, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: bookAI
+      value: 
+      objectReference: {fileID: 6021323273714558771}
+    - target: {fileID: 9136593670788380617, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: bookStats
+      value: 
+      objectReference: {fileID: 1796583640}
+    - target: {fileID: 9136593670788380617, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
+      propertyPath: faceController
+      value: 
+      objectReference: {fileID: 6021323273714558772}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5069061087286372164, guid: 144d21e61d653334ea8a3c514e369319, type: 3}
@@ -7086,6 +7182,28 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1796583640}
   m_SourcePrefab: {fileID: 100100000, guid: 001ae9ce5d874634fb98262c1864dbc0, type: 3}
+--- !u!114 &6021323273714558771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4869156154851751927, guid: 001ae9ce5d874634fb98262c1864dbc0, type: 3}
+  m_PrefabInstance: {fileID: 6021323273714558770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796583634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0fcf08b22464948af75ffb06c94c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BookAI
+--- !u!114 &6021323273714558772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7991557238151644408, guid: 001ae9ce5d874634fb98262c1864dbc0, type: 3}
+  m_PrefabInstance: {fileID: 6021323273714558770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796583634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d751adfd453034bb19db15b40b0411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleFaceController
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
